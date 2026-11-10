@@ -20,6 +20,13 @@ jobs:
         with:
           pdk: ihp-sg13cmos5l # or ihp-sg13g2
 
+  precheck:
+    needs: gds
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Run Tiny Tapeout Precheck
+        uses: TinyTapeout/tt-gds-action/precheck@ttihp27a
+
   viewer:
     needs: gds
     runs-on: ubuntu-24.04
